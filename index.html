@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo: sign in</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="h-screen flex flex-col justify-center items-center">
+    <!-- SIGN IN -->
+
+    <form
+      onsubmit="signIn(event)"
+      class="absolute flex flex-col items-center bg-white gap-7 overflow-hidden py-14 px-10 rounded-md shadow-lg shadow-zinc-300"
+    >
+      <h1 class="font-bold text-4xl">Todo</h1>
+      <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-3">
+          <div class="relative">
+            <input
+              type="text"
+              class="border-2 border-slate-300 w-64 rounded-md py-1 px-3 focus:outline-none"
+              placeholder="Enter your name"
+              id="signInName"
+              autofocus
+              required
+            />
+            <span class="absolute right-3 top-1">
+              <i class="fa-solid fa-user"></i>
+            </span>
+          </div>
+          <div class="relative">
+            <input
+              type="password"
+              class="border-2 border-slate-300 w-64 rounded-md py-1 px-3 focus:outline-none passkeys"
+              placeholder="Enter your password"
+              id="signInPassword"
+              required
+            />
+            <span id="openGlass" class="absolute right-3 top-1 cursor-pointer">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <button
+            type="submit"
+            class="font-bold text-lg text-white bg-blue-500 rounded-md py-1"
+          >
+            Sign in
+          </button>
+          <a
+            href="./signup.html"
+            onclick="document.getElementById('signUp').classList.add('z-10')"
+            class="text-slate-400 text-sm font-medium text-center select-none hover:underline cursor-pointer"
+            >I don't have an account</a
+          >
+        </div>
+      </div>
+    </form>
+    <script src="app.js"></script>
+  </body>
+</html>

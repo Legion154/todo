@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main
+      class="overflow-hidden relative bg-[#f4f4f4] selection:bg-emerald-500 selection:text-white w-full"
+    >
+      <button
+        type="button"
+        onclick="logout()"
+        class="py-1.5 px-4 bg-red-500 text-white font-bold absolute top-3 left-3 rounded-md hover:bg-red-600 select-none duration-200"
+      >
+        Logout
+      </button>
+      <button
+        type="button"
+        onclick="window.location.href = 'upadateAccount.html'"
+        class="py-1.5 px-4 bg-green-500 text-white font-bold absolute top-3 right-3 rounded-md hover:bg-green-600 select-none duration-200"
+      >
+        Update account
+      </button>
+      <section class="h-screen w-full flex justify-center pb-28">
+        <div
+          class="px-7 py-5 rounded-md flex flex-col gap-5 mt-28 items-center w-full sm:w-[400px]"
+        >
+          <form
+            onsubmit="taskForm(event)"
+            class="flex flex-row items-center gap-4 bg-white rounded-md px-5 py-5 w-full sm:w-[400px]"
+          >
+            <input
+              id="taskword"
+              autofocus
+              placeholder="Enter your task"
+              type="text"
+              class="bg-transparent focus:outline-none rounded-md px-4 py-1 sm:w-80 border border-slate-300 w-full"
+            />
+            <button
+              type="submit"
+              class="py-1 px-3 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600 select-none duration-200"
+            >
+              Add
+            </button>
+          </form>
+          <!-- TASK LIST -->
+          <div
+            id="tasks"
+            class="flex flex-col gap-3 w-full sm:w-[400px] mt-4 overflow-y-scroll"
+          ></div>
+        </div>
+      </section>
+    </main>
+    <script src="home.js"></script>
+  </body>
+</html>
